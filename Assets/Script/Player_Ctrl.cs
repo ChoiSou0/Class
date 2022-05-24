@@ -34,7 +34,7 @@ public class Player_Ctrl : MonoBehaviour
         Pos.x += xSpeed * Time.deltaTime * Player_Speed;
         Pos.z += zSpeed * Time.deltaTime * Player_Speed;
 
-        transform.position = Pos;
+        transform.position = Pos.normalized;
 
         //See
         
