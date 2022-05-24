@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Camera_Ctrl : MonoBehaviour
 {
+    [SerializeField] GameObject Player;
     [SerializeField] int Power;
     float xCam, yCam;
 
@@ -36,6 +37,19 @@ public class Camera_Ctrl : MonoBehaviour
             yCam = -30;
         }
 
+        if (xCam > 50)
+        {
+            xCam = 50;
+        }
+        else if (xCam < -50)
+        { 
+            xCam = -50;
+        }
+
         transform.eulerAngles = new Vector3 (-yCam, xCam, 0);
+
+        // Player Rotation
+
+        Player.transform.Rotate(0, xMouse, 0);
     }
 }
