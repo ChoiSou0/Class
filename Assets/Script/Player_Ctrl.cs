@@ -21,6 +21,7 @@ public class Player_Ctrl : MonoBehaviour
     {
         Move();
         Jump();
+        See();
     }
 
     void Move()
@@ -38,6 +39,11 @@ public class Player_Ctrl : MonoBehaviour
         //See
         
     }
+
+    void See()
+    {
+        this.transform.rotation = Quaternion.Euler(0, cam.transform.rotation.y, 0);
+    }    
 
     void Jump()
     {
