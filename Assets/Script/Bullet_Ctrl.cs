@@ -11,12 +11,13 @@ public class Bullet_Ctrl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Vec = new Vector3(Cam.transform.rotation.x, Cam.transform.rotation.y, Cam.transform.rotation.z).normalized;
+        Vec = new Vector3();
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vec * Bullet_Speed * Time.deltaTime);
+        Debug.Log(Vec);
     }
 }

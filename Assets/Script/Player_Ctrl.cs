@@ -19,9 +19,9 @@ public class Player_Ctrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(cam.transform.rotation);
         Move();
         Jump();
-        See();
     }
 
     void Move()
@@ -34,16 +34,11 @@ public class Player_Ctrl : MonoBehaviour
         Pos.x += xSpeed * Time.deltaTime * Player_Speed;
         Pos.z += zSpeed * Time.deltaTime * Player_Speed;
 
-        transform.position = Pos.normalized;
+        transform.position = Pos;
 
         //See
         
     }
-
-    void See()
-    {
-        this.transform.rotation = Quaternion.Euler(0, cam.transform.rotation.y, 0);
-    }    
 
     void Jump()
     {
