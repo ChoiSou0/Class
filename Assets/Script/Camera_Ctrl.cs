@@ -40,15 +40,6 @@ public class Camera_Ctrl : MonoBehaviour
             yCam = -30;
         }
 
-        if (xCam > 50)
-        {
-            xCam = 50;
-        }
-        else if (xCam < -50)
-        { 
-            xCam = -50;
-        }
-
         transform.eulerAngles = new Vector3 (-yCam, xCam, 0);
 
         // Player Rotation
@@ -62,7 +53,7 @@ public class Camera_Ctrl : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Mouse0) && Shoot_DelTime >= 0.3f)
         {
-            Instantiate(bullet, this.transform.position, Quaternion.EulerAngles(-yCam, xCam, 0));
+            Instantiate(bullet, this.transform.position, Quaternion.Euler(0, 0, 0));
             Shoot_DelTime = 0;
         }
     }

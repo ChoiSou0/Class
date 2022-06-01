@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class Bullet_Ctrl : MonoBehaviour
 {
-    [SerializeField] GameObject Cam;
     public int Bullet_Speed;
-    Vector3 Vec;
+    Camera_Ctrl camera;
 
     // Start is called before the first frame update
     void Start()
     {
-        Vec = new Vector3();
+        camera = GameObject.Find("MainCamera").GetComponent<Camera_Ctrl>();
+        this.transform.rotation = camera.transform.rotation;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vec * Bullet_Speed * Time.deltaTime);
-        Debug.Log(Vec);
+        transform.Translate(Vector3.forward * Bullet_Speed * Time.deltaTime);
     }
 }

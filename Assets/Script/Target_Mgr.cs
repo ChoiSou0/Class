@@ -6,11 +6,13 @@ public class Target_Mgr : MonoBehaviour
 {
     public GameObject target;
     public float DelTime;
+    Vector3 Vec;
+    int xVec, zVec;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -25,7 +27,9 @@ public class Target_Mgr : MonoBehaviour
 
         if (DelTime >= 5)
         {
-            Instantiate(target, new Vector3(0, 1, 0), Quaternion.identity);
+            xVec = Random.Range(-20, 21);
+            zVec = Random.Range(-20, 21);
+            Instantiate(target, new Vector3(xVec, 0.5f, zVec), Quaternion.identity);
             DelTime = 0;
         }
 
